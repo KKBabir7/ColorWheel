@@ -6,8 +6,234 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+*{
+  padding: 0;
+  margin: 0;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+}
+#colorWheel {
+  height: 660px;
+  background: transparent;
+  width: 100px;
+  margin-top: 60px !important;
+  margin: 0 auto;
+  position: relative;
+  background: rgb(255, 255, 255);
+}
+#colorWheel:before {
+  content: "";
+  width: 675px;
+  height: 675px;
+  overflow: hidden;
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  border-radius: 100%;
+  border: 10px solid #ffffff;
+  z-index: 1;
+}
+.colorDiv {
+  clip-path: polygon(50% 50%, 100% 100%, 0 100%);
+  width: 100px;
+  height: 670px;
+  position: absolute;
+  -webkit-transform-origin: 49% 49%;
+  transform-origin: 49% 49%;
+  z-index: 1;
+}  
+.additionalContainer {
+  position: absolute;
+  top: 53%;
+  left: 0%;
+  overflow: hidden;
+  z-index: 2;
+  transform: rotate(180deg);
+}
+.additionalDiv {
+  position: relative;
+  cursor: crosshair;
+  margin-top: 0px;
+  margin-bottom: -47px;
+  z-index: 1;
+  overflow: visible;
+  transition: width 0.3s, height 0.3s, transform 0.3s;
+  width: 140px;
+  height: 27px;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 23px solid transparent;
+  border-top: 23px solid;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  transform: translateX(28%);
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.color01 {
+   transform: rotate(17.14deg);
+}
+.color02 { 
+  transform: rotate(34.28deg); 
+}
+.color03 { 
+  transform: rotate(51.43deg); 
+}
+.color04 { 
+  transform: rotate(68.57deg); 
+}
+.color05 { 
+  transform: rotate(85.71deg); 
+}
+.color06 { 
+  transform: rotate(102.86deg); 
+}
+.color07 { 
+  transform: rotate(120deg); 
+}
+.color08 { 
+  transform: rotate(137.14deg); 
+}
+.color09 { 
+  transform: rotate(154.28deg); 
+}
+.color10 { 
+  transform: rotate(171.43deg); 
+}
+.color11 { 
+  transform: rotate(188.57deg); 
+}
+.color12 { 
+  transform: rotate(205.71deg); 
+}
+.color13 { transform: rotate(222.86deg); 
+}
+.color14 { 
+  transform: rotate(240deg); 
+}
+.color15 { 
+  transform: rotate(257.14deg);
+}
+.color16 { 
+  transform: rotate(274.28deg);
+}
+.color17 { 
+  transform: rotate(291.43deg);
+}
+.color18 { 
+  transform: rotate(308.57deg); 
+}
+.color19 { 
+  transform: rotate(325.71deg);
+}
+.color20 { 
+  transform: rotate(342.86deg); 
+}
+.color21 { 
+  transform: rotate(360deg); 
+}
+
+#colorCircle {
+  position: fixed;
+  width: 100px;
+  z-index: 9999999999;
+  height: 100px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid #838383;
+  pointer-events: none;
+  margin: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+#colorCircle::after{
+  content: "Click To Get Color";
+  width: 60px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  height: 60px;
+  overflow: hidden;
+  position: absolute;
+  justify-content: center;
+  top: 20px;
+  left: 18px;
+  border-radius: 100%;
+  z-index: 1;
+  color: #404040;
+}
+
+#colorInfo{
+  width: 80%;
+  border-radius: 20px;
+  display: none;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  line-height: 35px;
+  font-size: 20px;
+  margin: 0 auto;
+}
+.setColorCode{
+  width: 55%;
+  background: rgba(255, 255, 255, 0.385);
+  padding: 20px 20px;
+  border-radius: 20px;
+  margin-top: 2px;
+}
+#colorInfo .setColorCode h4 i{
+  opacity: 1;
+  transition: all 0.5s ease;
+  cursor: copy;
+}
+#colorInfo .setColorCode h4 i:hover{
+  opacity: 0.5;
+}
+.copyColor{
+  cursor: pointer;
+}
+#colorInfo h4{
+  margin-bottom: 0px;
+  margin-top: 0px;
+  opacity: 0.8;
+}
+#colorInfo #HEXColor::selection,#colorInfo #RGBColor::selection{
+  background: transparent;
+  padding: 0;
+  transition: all 0.2s ease;
+  color: rgba(106, 101, 101, 0.912);
+}
+#confirmColorCode{
+  position: fixed;
+  width: 200px;
+  height: 20px;
+  background: rgb(31,66,106);
+  background: linear-gradient(340deg, rgba(31,66,106,1) 0%, rgba(106,101,101,1) 100%);
+  top: -200px;
+  transition: all 0.5s ease;
+  font-size: 18px;
+  text-align: center;
+  padding: 18px 10px;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  margin: 0 auto;
+  z-index: 9999;
+  color: #fff;
+  border-radius: 10px;
+}
+#confirmColorCode i{
+  color: rgb(43, 215, 103);
+  
 }
