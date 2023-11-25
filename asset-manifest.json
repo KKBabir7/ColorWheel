@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Colorwheel/static/css/main.134235e5.css",
+    "main.js": "/Colorwheel/static/js/main.11257156.js",
+    "index.html": "/Colorwheel/index.html",
+    "main.134235e5.css.map": "/Colorwheel/static/css/main.134235e5.css.map",
+    "main.11257156.js.map": "/Colorwheel/static/js/main.11257156.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.134235e5.css",
+    "static/js/main.11257156.js"
+  ]
+}
